@@ -39,7 +39,7 @@ namespace TenisStat.Backend.Repository
             foreach (var player in this.Players)
             {
                 WeightKg = player.Data.Weight / 1000.0;
-                WeightKg = player.Data.Height / 100.0;
+                HeightM = player.Data.Height / 100.0;
                 totalImc += WeightKg / (HeightM * HeightM);
             }
 
