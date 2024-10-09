@@ -30,11 +30,11 @@ dotnet run
 ```
 ## Points de terminaison de l'API
 
-### 1. Obtenir la liste des joueuers du mieux classé au moins bon
+### 1. Obtenir la liste des joueurs du mieux classé au moins bon
 
 - **URL** : `/api/TenisStat/GetPlayersRanking`
 - **Méthode** : `GET`
-- **Description** : Récupère la liste des joueuers avec leur nom et leur classement.
+- **Description** : Récupère la liste des joueurs avec leurs nom, leurs id et leurs classement.
 - **Réponse** :
   - **200 OK** : Une liste de `PlayerRanking`.
   - **500 Internal Server Error** : En cas d'erreur lors de la récupération des données.
