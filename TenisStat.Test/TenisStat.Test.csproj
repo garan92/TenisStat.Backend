@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TenisStat.Backend\Backend.csproj" />
     <ProjectReference Include="..\TenisStat.Backend\TenisStat.Backend.csproj" />
   </ItemGroup>
 

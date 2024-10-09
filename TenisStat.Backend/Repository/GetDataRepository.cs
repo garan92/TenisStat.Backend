@@ -5,7 +5,11 @@ namespace TenisStat.Backend.Repository
 {
     public class GetDataRepository
     {
-        
+        /// <summary>
+        /// Cette méthode convertir le fichier de données en une liste d'objet. Un objet correspond aux données d'un joueur 
+        /// </summary>
+        /// <returns>liste de joueurs</returns>
+        /// <exception cref="FileNotFoundException">si le fichier n'est pas trouvé</exception>
         public List<Player> GetPlayersData()
         {
             string baseDirectory = AppContext.BaseDirectory;

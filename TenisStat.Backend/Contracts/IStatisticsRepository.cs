@@ -2,10 +2,10 @@
 {
     public interface IStatisticsRepository
     {
-
         public string GetBestCountry();
-        public double GetAverageImc();
-        public double GetMedianHeight();
 
+        public double GetAverageImc();
+
+        public double GetMedianHeight();
     }
 }

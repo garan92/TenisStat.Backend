@@ -12,6 +12,10 @@ namespace TenisStat.Test
         private ITenisStatRepository _tenisStatRepository;
         private IStatisticsRepository _statisticsRepository;
 
+
+        /// <summary>
+        /// création des objets 
+        /// </summary>
         [TestInitialize]
         public void TestInitialize()
         {
@@ -20,6 +24,10 @@ namespace TenisStat.Test
             _statisticsRepository = new StatisticsRepository();
         }
 
+
+        /// <summary>
+        /// vérifie si le classement est correct
+        /// </summary>
         [TestMethod]
         public void GetRank()
         {
@@ -33,8 +41,13 @@ namespace TenisStat.Test
             Assert.AreEqual("Serena Williams", result[2].Name, "Le troisième joueur doit être Serena Williams");
         }
 
+
+
+        /// <summary>
+        /// vérifie que l'id 65 correspond bien a Stan Wawrinka
+        /// </summary>
         [TestMethod]
-        public void GetPlayerById()
+        public void GetPlayerById65()
         {
             Player result = _tenisStatRepository.GetPlayerById(65);
             Assert.AreEqual("Stan", result.Firstname, "Le prénom du joueur doit être Stan");
@@ -43,6 +56,11 @@ namespace TenisStat.Test
             Assert.AreEqual(33, result.Data.Age, "Le joueur doit avoir 33 ans");
         }
 
+
+
+        /// <summary>
+        /// vérifie qu'on renvoie bien une erreur id non trouvé si on fournit un id qui n'est pas dans la liste des joueurs
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(KeyNotFoundException))]
         public void GetPlayerByUnknownId()
@@ -50,6 +68,10 @@ namespace TenisStat.Test
             var result = _tenisStatRepository.GetPlayerById(404);
         }
 
+
+        /// <summary>
+        /// vérifie que le pays avec le plus de victoire est bien les USA
+        /// </summary>
         [TestMethod]
         public void GetBestCountry()
         {

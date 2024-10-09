@@ -19,6 +19,13 @@ namespace TenisStat.Backend.Controllers
             _tenisStatRepository = tenisStatRepository;
         }
 
+
+        /// <summary>
+        /// Cet api fournit la liste des joueurs selon leur classement général
+        /// </summary>
+        /// <returns>
+        /// Liste d'objets au format rank, firstname + lastname
+        /// </returns>
         [HttpGet("GetPlayersRanking")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<PlayerRanking>))]
         public IActionResult GetplayersRanking()
@@ -35,6 +42,11 @@ namespace TenisStat.Backend.Controllers
 
         }
 
+        /// <summary>
+        /// Cet api retourne les informations du joueur
+        /// </summary>
+        /// <param name="id"> identifiant du joueur</param>
+        /// <returns>infos du joueur</returns>
         [HttpGet("GetPlayerById/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Player))]
         public IActionResult GetPlayerById(int id)
@@ -53,8 +65,11 @@ namespace TenisStat.Backend.Controllers
                 return StatusCode(500, "Internal server error: " + ex.Message); 
             }
         }
-       
 
+        /// <summary>
+        /// cet Api renvoie Pays qui a le plus grand ratio de parties gagnées, IMC moyen de tous les joueurs, La médiane de la taille des joueurs
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("GetGlobalStatistics")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GlobalStatistics))]
         public IActionResult GetGlobalStatistics()
